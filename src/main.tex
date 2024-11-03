@@ -8,7 +8,7 @@
 \newcommand{\userName}{João Sá Pereira}
 \newcommand{\institution}{FEUP}
 
-\usepackage{sample-handout}
+\usepackage{lab_notes}
 
 %\title{An Example of the Usage of the Tufte-Handout Style\thanks{Inspired by Edward~R. Tufte!}}
 %
@@ -65,36 +65,21 @@
 
 \input{chapters/caracterizacao_amostras}
 
+%\cleardoublepage
+%
+%% let's start a new thought -- a new section
+%\newthought{In his later books},\cite{fiuza_2011} Tufte
+%starts each section with a bit of vertical space, a non-indented paragraph,
+%and sets the first few words of the sentence in \textsc{small caps}.
+% To accomplish this using this style, use the \Verb|\newthought| command:
 
-\begin{abstract}
-\noindent
-This document describes the Tufte handout \LaTeX\ document style.
-It also provides examples and comments on the style's use.
-Only a brief overview is presented here;
-for a complete reference, see the sample book.
-\end{abstract}
-
-%\printclassoptions
-
-The Tufte-\LaTeX\ document classes define a style similar to the
-style Edward Tufte uses in his books and handouts.  Tufte's style is known
-for its extensive use of sidenotes, tight integration of graphics with
-text, and well-set typography.  This document aims to be at once a
-demonstration of the features of the Tufte-\LaTeX\ document classes
-and a style guide to their use.
-
-% let's start a new thought -- a new section
-\newthought{In his later books},\cite{fiuza_2011} Tufte
-starts each section with a bit of vertical space, a non-indented paragraph,
-and sets the first few words of the sentence in \textsc{small caps}.
- To accomplish this using this style, use the \Verb|\newthought| command:
-
-\cleardoublepage
-\pagestyle{plain}
-\topskip0pt
-\vspace*{\fill}
-\bibliography{main}
+%\cleardoublepage
+%\pagestyle{plain}
+%\topskip0pt
+%\vspace*{\fill}
+\nocite{*}
+\nobibliography{main}
 \bibliographystyle{plainnat}
-\vspace*{\fill}
+%\vspace*{\fill}
 
 \end{document}

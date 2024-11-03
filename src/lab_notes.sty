@@ -1,8 +1,9 @@
-\ProvidesPackage{sample-handout}
+%! suppress = EscapeHashOutsideCommand
+\ProvidesPackage{lab_notes}
 %\date{28 March 2010} % without \date command, current date is supplied
 
 % Packages
-\RequirePackage{changepage, fancyhdr, hyperref, optparams, paralist, placeins, ragged2e, setspace, textcase, textcomp, titlesec, titletoc, xcolor, xifthen, helvet, mathpazo, soul}
+\RequirePackage{changepage, fancyhdr, hyperref, optparams, paralist, placeins, ragged2e, setspace, textcase, textcomp, titlesec, titletoc, xcolor, xifthen, helvet, mathpazo, soul,natbib}
 \RequirePackage{amsmath,mathtools,amsfonts,bigdelim,booktabs,epsfig,framed, multibib, multirow,pdflscape,url,wrapfig,bm,units,multicol,lipsum}
 %\geometry{showframe} % display margins for debugging page layout
 \RequirePackage[version=4]{mhchem}
@@ -217,5 +218,5 @@
     \vskip 12pt
 }
 
-\newcommand\myworries[1]{\textcolor{red}{\#1}}
+\newcommand\myworries[1]{\textcolor{red}{#1}}
 %\renewcommand\myworries[1]{} % uncomment to remove all myworries notes
