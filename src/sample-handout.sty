@@ -1,0 +1,221 @@
+\ProvidesPackage{sample-handout}
+%\date{28 March 2010} % without \date command, current date is supplied
+
+% Packages
+\RequirePackage{changepage, fancyhdr, hyperref, optparams, paralist, placeins, ragged2e, setspace, textcase, textcomp, titlesec, titletoc, xcolor, xifthen, helvet, mathpazo, soul}
+\RequirePackage{amsmath,mathtools,amsfonts,bigdelim,booktabs,epsfig,framed, multibib, multirow,pdflscape,url,wrapfig,bm,units,multicol,lipsum}
+%\geometry{showframe} % display margins for debugging page layout
+\RequirePackage[version=4]{mhchem}
+\RequirePackage{hyperref}
+\hypersetup{
+    pdffitwindow=false,            % window fit to page
+    pdfstartview={Fit},            % fits width of page to window
+    pdftitle={Lab notes 2014},     % document title
+    pdfauthor={Your Name},         % author name
+    pdfsubject={},                 % document topic(s)
+    pdfnewwindow=true,             % links in new window
+    colorlinks=true,               % coloured links, not boxed
+    linkcolor=DarkScarletRed,      % colour of internal links
+    citecolor=DarkChameleon,       % colour of links to bibliography
+    filecolor=DarkPlum,            % colour of file links
+    urlcolor=DarkSkyBlue           % colour of external links
+}
+\RequirePackage{graphicx} % allow embedded images
+  \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+  \graphicspath{{figures/}} % set of paths to search for images
+\RequirePackage{fancyvrb} % extended verbatim environments
+  \fvset{fontsize=\normalsize}% default font size for fancy-verbatim environments
+
+% Standardize command font styles and environments
+\newcommand{\doccmd}[1]{\texttt{\textbackslash#1}}% command name -- adds backslash automatically
+\newcommand{\docopt}[1]{\ensuremath{\langle}\textrm{\textit{#1}}\ensuremath{\rangle}}% optional command argument
+\newcommand{\docarg}[1]{\textrm{\textit{#1}}}% (required) command argument
+\newcommand{\docenv}[1]{\textsf{#1}}% environment name
+\newcommand{\docpkg}[1]{\texttt{#1}}% package name
+\newcommand{\doccls}[1]{\texttt{#1}}% document class name
+\newcommand{\docclsopt}[1]{\texttt{#1}}% document class option name
+\newenvironment{docspec}{\begin{quote}\noindent}{\end{quote}}% command specification environment
+
+% Define a custom color set.
+\definecolor{tenPercentGrey}{gray}{0.9}
+% COLORS (Tango) Mostly by Philip Bunge
+% http://pbunge.crimson.ch/
+\definecolor{White}{gray}{0.9}
+\definecolor{Black}{gray}{0.0}
+\definecolor{LightButter}{rgb}{0.98,0.91,0.31}
+\definecolor{LightOrange}{rgb}{0.98,0.68,0.24}
+\definecolor{LightChocolate}{rgb}{0.91,0.72,0.43}
+\definecolor{LightChameleon}{rgb}{0.54,0.88,0.20}
+\definecolor{LightSkyBlue}{rgb}{0.45,0.62,0.81}
+\definecolor{LightPlum}{rgb}{0.68,0.50,0.66}
+\definecolor{LightScarletRed}{rgb}{0.93,0.16,0.16}
+\definecolor{Butter}{rgb}{0.93,0.86,0.25}
+\definecolor{Orange}{rgb}{0.96,0.47,0.00}
+\definecolor{Chocolate}{rgb}{0.75,0.49,0.07}
+\definecolor{Chameleon}{rgb}{0.45,0.82,0.09}
+\definecolor{SkyBlue}{rgb}{0.20,0.39,0.64}
+\definecolor{Plum}{rgb}{0.46,0.31,0.48}
+\definecolor{ScarletRed}{rgb}{0.80,0.00,0.00}
+\definecolor{DarkButter}{rgb}{0.77,0.62,0.00}
+\definecolor{DarkOrange}{rgb}{0.80,0.36,0.00}
+\definecolor{DarkChocolate}{rgb}{0.56,0.35,0.01}
+\definecolor{DarkChameleon}{rgb}{0.30,0.60,0.02}
+\definecolor{DarkSkyBlue}{rgb}{0.12,0.29,0.53}
+\definecolor{DarkPlum}{rgb}{0.36,0.21,0.40}
+\definecolor{DarkScarletRed}{rgb}{0.64,0.00,0.00}
+\definecolor{Aluminium1}{rgb}{0.93,0.93,0.92}
+\definecolor{Aluminium2}{rgb}{0.82,0.84,0.81}
+\definecolor{Aluminium3}{rgb}{0.73,0.74,0.71}
+\definecolor{Aluminium4}{rgb}{0.53,0.54,0.52}
+\definecolor{Aluminium5}{rgb}{0.33,0.34,0.32}
+\definecolor{Aluminium6}{rgb}{0.18,0.20,0.21}
+
+%%% LISTINGS
+\RequirePackage{listings}
+\lstset{
+  backgroundcolor=\color{tenPercentGrey}, %
+  basicstyle=\color{Black}\ttfamily{}, %
+  keywordstyle=[1]\color{DarkSkyBlue}, %
+  keywordstyle=[2]\color{DarkScarletRed}, %
+  keywordstyle=[3]\bfseries{}, %
+  keywordstyle=[4]\color{DarkPlum}, %
+  keywordstyle=[5]\color{SkyBlue}, %
+  commentstyle=\color{Aluminium4}, %
+  stringstyle=\color{Chocolate}, %
+  identifierstyle=\color{Black}, %
+  emphstyle=\color{Black}, %
+  numbers=left, %
+  stepnumber=1, %
+  frame=tb, %
+  captionpos=b, %
+  lineskip=\smallskipamount{}, %
+  aboveskip=\bigskipamount{}, %
+  belowskip=\medskipamount{}, %
+  commentstyle=\itshape\small{}, %
+  tabsize=2, %
+  breaklines=true, %
+  rulecolor=\color{Black!30}, %
+  showspaces=false, %
+  showstringspaces=false, %
+  showtabs=false, %
+} % chktex 6
+
+%%%%%%%%%%%% ASTRONOMY %%%%%%%%%%%%%%%%
+% Code from Research Diary Template by Mikhail Klassen
+\newcommand{\Msun}{M_\odot}
+\newcommand{\Lsun}{L_\odot}
+\newcommand{\Rsun}{R_\odot}
+\newcommand{\Mearth}{M_\oplus}
+\newcommand{\Learth}{L_\oplus}
+\newcommand{\Rearth}{R_\oplus}
+
+%%%%%%%%%%% MATHEMATICS %%%%%%%%%%%%%%%
+% Code from Research Diary Template by Mikhail Klassen
+\newcommand{\grad}{\nabla}
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+\newcommand{\bea}{\begin{eqnarray}}
+\newcommand{\eea}{\end{eqnarray}}
+\newcommand{\eqnarr}{\begin{eqnarray}}
+\newcommand{\eqnend}{\end{eqnarray}}
+\newcommand{\deriv}[2]{\frac{d #1}{d #2}}
+\newcommand{\bigO}{\mathcal{O}}
+\DeclareMathSymbol{\umu}{\mathalpha}{operators}{0}
+
+%%%%%%%%%%% HEADER / FOOTER %%%%%%%%%%%
+\pagestyle{fancy}
+\setlength\parindent{0in}
+\setlength\parskip{0.1in}
+\setlength\headheight{15pt}
+
+\lhead{\textsc{\userName}}
+\chead{\textsc{Notas de Laboratório}}
+\rhead{\workingDate}
+\lfoot{\includegraphics[width=0.1\textwidth]{figures/uporto-feup}}
+\cfoot{~~\textit{Última modificação: \today}}
+\rfoot{\textsc{\thepage}}
+
+%%%%%%%%%%% TITLE PAGE %%%%%%%%%%
+%%%% Kevin Godny's code for title page and contents from https://groups.google.com/forum/#!topic/tufte-latex/ujdzrktC1BQ
+\makeatletter
+\newcommand{\plainsubtitle}{}%     plain-text-only subtitle
+\newcommand{\subtitle}[1]{%
+  \gdef\@subtitle{#1}%
+  \renewcommand{\plainsubtitle}{#1}% use provided plain-text title
+  \ifthenelse{\isundefined{\hypersetup}}%
+    {}% hyperref is not loaded; do nothing
+    {\hypersetup{pdftitle={\plaintitle: \plainsubtitle{}}}}% set the PDF metadata title
+}
+\renewcommand{\maketitlepage}{%
+\begingroup%
+\setlength{\parindent}{0pt}
+
+{\fontsize{24}{24}\selectfont\textit{\@author}\par}
+
+\vspace{1.75in}{\fontsize{32}{54}\selectfont\@title\par}
+
+\vspace{0.25in}{\fontsize{18}{18}\selectfont\@subtitle\par}
+
+\vspace{0.5in}{\fontsize{14}{14}\selectfont\textsf{\smallcaps{\@date}}\par}
+
+\vfill{\fontsize{14}{14}\selectfont\textit{\@publisher}\par}
+
+\thispagestyle{empty}
+\endgroup
+}
+\makeatother
+
+\titlecontents{part}%
+    [0pt]% distance from left margin
+    {\addvspace{0.25\baselineskip}}% above (global formatting of entry)
+    {\allcaps{Part~\thecontentslabel}\allcaps}% before w/ label (label = ``Part I'')
+    {\allcaps{Part~\thecontentslabel}\allcaps}% before w/o label
+    {}% filler and page (leaders and page num)
+    [\vspace*{0.5\baselineskip}]% after
+
+\titlecontents{chapter}%
+    [4em]% distance from left margin
+    {}% above (global formatting of entry)
+    {\contentslabel{2em}\textit}% before w/ label (label = ``Chapter 1'')
+    {\hspace{0em}\textit}% before w/o label
+    {\qquad\thecontentspage}% filler and page (leaders and page num)
+    [\vspace*{0.5\baselineskip}]% after
+%%%% End additional code by Kevin Godby
+
+%%%%%%%%%%% NEW ENVIRONMENTS %%%%%%%%%%
+\newenvironment{projects}%
+	{\section*{Projeto}}%
+	{\vspace{2mm}\hrule\hspace{\stretch{1}}}
+
+\newenvironment{maybe}%
+	{\section*{Someday / Maybe}}%
+	{\vspace{2mm}\hrule\hspace{\stretch{1}}}
+
+\newenvironment{planos}%
+	{\section*{Plano de Trabalhos}}%
+	{\vspace{2mm}\hrule\hspace{\stretch{1}}}
+
+%%%%%%%%%%% NEW COMMANDS %%%%%%%%%%%%%%
+\newcommand{\univlogo}{%
+  \noindent
+  \begin{wrapfigure}{r}{0.3\textwidth}
+    \vspace{-33pt}
+    \begin{center}
+      \includegraphics[width=0.3\textwidth]{figures/uporto-feup}
+    \end{center}
+    \vspace{-105pt}
+  \end{wrapfigure}
+}
+
+\newcommand{\newday}[1]{%
+    \section*{#1}%
+}
+
+% Para adicionar um parágrafo extra
+\newcommand{\newpara}
+{
+    \vskip 12pt
+}
+
+\newcommand\myworries[1]{\textcolor{red}{\#1}}
+%\renewcommand\myworries[1]{} % uncomment to remove all myworries notes

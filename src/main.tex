@@ -1,0 +1,100 @@
+\documentclass[a4paper]{tufte-handout}
+
+\usepackage[portuguese]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{csquotes}
+
+\newcommand{\workingDate}{\textsc{2024/2025}}
+\newcommand{\userName}{João Sá Pereira}
+\newcommand{\institution}{FEUP}
+
+\usepackage{sample-handout}
+
+%\title{An Example of the Usage of the Tufte-Handout Style\thanks{Inspired by Edward~R. Tufte!}}
+%
+%\author[The Tufte-LaTeX Developers]{The Tufte-\LaTeX\ Developers}
+%%%%%%%%%%%%%%% TITLE PAGE %%%%%%%%%%%%%%%
+\title{Notas de Laboratório}
+\subtitle{Bolsa de Investigação - INN4MIN}
+\author[João Sá Pereira]{João Sá Pereira}
+\date{2024/2025}
+\publisher{Faculdade de Engenharia da Universidade do Porto}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\selectlanguage{portuguese}
+    %%%%%%%%%%%%%%% TITLE %%%%%%%%%%%%%%%
+	\maketitlepage
+	\newpage
+	\thispagestyle{empty}
+	\topskip0pt
+	\vspace*{\fill}
+	\begin{projects}
+		\begin{description}
+			\item [INN4MIN] Desenvolvimento de metodologias inovadoras e sustentáveis aplicadas a recuperação de ouro e elementos críticos em minérios e placas de circuito integradas utilizadas\footnote{\href{https://cerena.pt/projects/inn4min-development-innovative-and-sustainable-approaches-applied-recovery-gold-and-1}{ERA-MIN3/0003/2021}}
+		\end{description}
+	\end{projects}
+
+	\begin{planos}
+		Lixiviação de uma amostra de ouro da mina do Numão (pré-concentrado, cerca de 15~kg)
+		\begin{description}
+			\item [Preparação de amostras:] Amostragens para sacos de 200/250~g.
+			\item [Caracterização de amostras:] FRX, Digestão ABS, análise granulométrica $\rightarrow$ fazer em triplicado.
+			\item [Lixiviação:] Plano de lixiviação com Tioreia (fazer exploratório e depois preparar plano de ensaios)
+			\item [Lixiviação:] Plano de lixiviação com Citrato.
+			\item [Lixiviação:] Plano de lixiviação com Bromo.
+		\end{description}
+		Fazer ensaios exploratórios com os 3 reagentes e, em função dos resultados, preparar plano mais exaustivo.
+	\end{planos}
+
+	% \begin{maybe}
+	%     \begin{itemize}
+	%     	\item Reimplement the ideas from the paper \textit{Getting Reference Counting Back in the Ring}
+	%     \end{itemize}
+	% \end{maybe}
+
+	\vspace*{\fill}
+
+	\newpage
+
+	\pagestyle{fancy}
+
+	%%%%%%%%%%%% Begining of document %%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{chapters/caracterizacao_amostras}
+
+
+\begin{abstract}
+\noindent
+This document describes the Tufte handout \LaTeX\ document style.
+It also provides examples and comments on the style's use.
+Only a brief overview is presented here;
+for a complete reference, see the sample book.
+\end{abstract}
+
+%\printclassoptions
+
+The Tufte-\LaTeX\ document classes define a style similar to the
+style Edward Tufte uses in his books and handouts.  Tufte's style is known
+for its extensive use of sidenotes, tight integration of graphics with
+text, and well-set typography.  This document aims to be at once a
+demonstration of the features of the Tufte-\LaTeX\ document classes
+and a style guide to their use.
+
+% let's start a new thought -- a new section
+\newthought{In his later books},\cite{fiuza_2011} Tufte
+starts each section with a bit of vertical space, a non-indented paragraph,
+and sets the first few words of the sentence in \textsc{small caps}.
+ To accomplish this using this style, use the \Verb|\newthought| command:
+
+\cleardoublepage
+\pagestyle{plain}
+\topskip0pt
+\vspace*{\fill}
+\bibliography{main}
+\bibliographystyle{plainnat}
+\vspace*{\fill}
+
+\end{document}
