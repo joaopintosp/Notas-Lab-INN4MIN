@@ -1,6 +1,7 @@
 *.idea
 
 ## Core latex/pdflatex auxiliary files:
+*.auxil
 *.aux
 *.lof
 *.log
