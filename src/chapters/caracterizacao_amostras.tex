@@ -284,3 +284,68 @@ Estava planeado começar hoje a digestão ácida, mas devido à indisponibilidad
 \hrulefill
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newday{5 Novembro 2024}
+
+\subsection*{Tratamento dos dados de FRX}\label{subsec:tratamento-dados-frx}
+
+O FRX forneceu-nos um ficheiro \texttt{.csv} que continha os resultados das análises efetuadas.
+Esse ficheiro continha valores de concentração de diversos elementos químicos para cada um dos 5 tiros em cada uma das sub-amostras.
+
+O tratamento dos dados é necessário e vão consistir nas seguintes etapas:
+\begin{enumerate}
+    \item Análise exploratória inicial:
+    \begin{enumerate}
+        \item Verificar valores médios e variabilidade: analisar a média e o desvio padrão nos cinco tiros de cada amostra;
+        \item Visualização dos dados: construção de gráficos de bigodes (\emph{box plots}) para cada elemento em cada amostra.
+        \begin{marginfigure}
+            \includegraphics[width=\linewidth]{figures/exemplo_boxplot}
+            \caption{Exemplo de um gráfico de bigodes.}
+            \label{fig:boxplot_example}
+        \end{marginfigure}
+    \end{enumerate}
+    \item Cálculo de Estatísticas Descritivas:
+    \begin{enumerate}
+        \item Para cada elemento de cada amostra, calcular o valor da média geral e do desvio padrão entre os tiros.
+        A média geral representa o valor médio do elemento para a amostra, enquanto o desvio padrão mostra a variabilidade entre os tiros;
+        \item Calcular o coeficiente de variação (CV):
+        \marginnote[0.5cm]{
+            \begin{equation*}
+            CV = \frac{\text{desvio padrão}}{\text{média}}\times 100
+            \end{equation*}
+        }
+        O CV indica a variabilidade em relação à média e é útil para comparar a consistência de diferentes elementos.
+    \end{enumerate}
+    \item Análise de Outliers:
+    \begin{enumerate}
+        \item Analisar os outliers para cada elemento em cada amostra.
+        Dependendo da dispersão observada, identificar tiros atípicos (por exemplo, valores que se afastam mais de 2 ou 3 desvios padrão da média);
+        \item Decidir se esses outliers devem ser mantidos ou removidos, considerando fatores como a homogeneidade da amostra e a precisão do FRX\@.
+    \end{enumerate}
+    \item Cálculo da média Representativa e Intervalos de Confiança:
+    \begin{enumerate}
+        \item Calcular a média representativa final para cada elemento em cada amostra considerando os cinco tiros (ou menos, se tiver removido os outliers);
+        \item Construir intervalos de confiança para a média de cada elemento em cada amostra.
+        Para amostras pequenas (como 5 tiros), o intervalo de confiança é uma boa medida da variabilidade dos dados.
+    \end{enumerate}
+    \end{enumerate}
+
+Exemplo de como organizar os dados:
+\begin{table}[!htb]
+    \centering
+    \caption{Organização dos dados.}
+    \label{tab:organizacao-dos-dados}
+    \begin{tabular}{@{}lccccc@{}}
+        \toprule
+        \textbf{Amostra} & \textbf{Elemento} & \bm{$\overline{x}$} & \bm{$\sigma$} & \textbf{CV} & \textbf{Int. Conf.}  \\ \midrule
+        A01 & \ce{Fe} & xx.x & x.x & x.x & [xx.x; xx.x] \\
+        A02 & \ce{Cu} & xx.x & x.x & x.x & [xx.x; xx.x] \\
+        \ldots & \ldots & \ldots & \ldots & \ldots & \ldots \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\marginnote{Na Tabela~\ref{tab:organizacao-dos-dados}, $\overline{x}$ representa a média e $\sigma$ o desvio padrão.}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
