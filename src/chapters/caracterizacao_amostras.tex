@@ -66,7 +66,7 @@ A amostra A será posteriormente separada em sacos de $\approx$~1~kg.
 
 \marginnote{É importante ter em consideração que obtêm-se sempre duas amostras com o separador \textit{Jones}, mas que uma das metades obtidas é \textbf{sempre} descartada. Ou seja, na Figura~\ref{fig:diagrama_jones}, o ramo da direita de cada uma das ramificações foi descartado para ser separado posteriormente (a totalidade da amostra foi separada em sacos de $\approx$~1~kg).}
 
-\subsection*{Funcionamento do separador Jones}
+\subsection{Funcionamento do separador Jones}\label{subsec:funcionamento-do-separador-jones}
 
 O \emph{Jones} separa uma amostra em duas metades, sendo que uma das metades separadas é descartada e trabalha-se com a outra.
 
@@ -169,7 +169,6 @@ Como existe muito pouco material acima do calibre 0,300~mm (<~5~\%), juntou-se t
 \pagebreak
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
 \newday{30 Outubro 2024}
 
 \newthought{Granulómetro Laser} \href{https://www.malvernpanalytical.com/en/support/product-support/mastersizer-range/mastersizer-2000}{Malvern Mastersizer 2000}
@@ -211,7 +210,7 @@ Os dados das análises foram guardados para uso posterior.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newday{31 Outubro 2024}
+\newday{31 Outubro 2024}\label{day:31-outubro-2024}
 
 \begin{marginfigure}[3\baselineskip]
     \centering
@@ -227,8 +226,6 @@ Para esta divisão foi utilizado o divisor de amostras apresentado na Figura~\re
 Este equipamento em específico, divide a amostra em 8~partes iguais.
 Portanto, das nossas amostras de $\approx$~1~kg iremos obter 8 sub-amostras de $\approx$~0,125~kg.
 Como queremos que as nossas sub-amostras tenham $\approx$~0,250~kg, iremos juntar os frascos resultantes da divisão 2~a~2.
-
-
 
 O funcionamento do divisor de amostras é bastante simples e direto.
 Coloca-se os frascos, liga-se o equipamento, liga-se o alimentador e coloca-se a amostra (pouco a pouco para prevenir entupimentos) no funil do alimentador\sidenote{O divisor de amostras conta com o alimentador \href{https://www.retsch.pt/pt/produtos/assistencia/alimentadores/}{DR 100} que promove a alimentação contínua de material ao divisor.}.
@@ -252,12 +249,18 @@ As massas de cada uma das sub-amostras está apresentada na tabela seguinte:
 
 \newpara
 
-
 Uma vez divididas as sub-amostras, iremos escolher um dos sacos de $\approx$~250~g proveniente da divisão de cada um dos 8 sacos de $\approx$~1~kg.
 Estas 8 sub-amostras irão ser analisadas no FRX\sidenote{A fluorescência de raios X (FRX) é uma técnica rápida e não destrutiva amplamente usada para determinar a composição elementar de um material que requer apenas uma preparação mínima da amostra.} para determinar a composição química das amostras.
 Como o teor em \ce{Au} deve ser muito pequeno, ele não será determinado por esta análise, obteremos apenas os elementos em maior quantidade.
 
 Foram escolhidas as amostras A$_{01.1}$, A$_{02.3}$, A$_{03.2}$, A$_{04.3}$, A$_{05.3}$, A$_{06.4}$, A$_{07.4}$ e A$_{08.3}$ para serem analisadas no FRX\@.
+
+\begin{marginfigure}[1\baselineskip]
+    \centering
+    \includegraphics[width=0.7\linewidth]{figures/FRX}
+    \caption{Equipamento FRX utilizado.}
+    \label{fig:equipamento_frx}
+\end{marginfigure}
 
 O funcionamento do equipamento FRX é bastante simples, basta colocar a amostra dentro do equipamento, fechar bem a porta e acionar o gatilho para começar a análise.
 Foram realizados cinco ``tiros'' por amostra, com um tempo de análise de 30~segundos em cada tiro.
@@ -279,73 +282,84 @@ Os dados irão ser posteriormente analisados.
 
 \newday{4 Novembro 2024}
 
-Estava planeado começar hoje a digestão ácida, mas devido à indisponibilidade dos laboratórios ficou para outro dia - 8 de novembro de 2024.
+Estava planeado começar hoje a digestão ácida, mas devido à indisponibilidade dos laboratórios ficou para outro dia - \myworries{7 de novembro de 2024}.
 
 \hrulefill
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newday{5 Novembro 2024}
+\newday{6 Novembro 2024}
 
-\subsection*{Tratamento dos dados de FRX}\label{subsec:tratamento-dados-frx}
+Hoje foram refeitas as análises FRX para as amostras \texttt{A01.1}, \texttt{A03.2}, \texttt{A05.3} e \texttt{A08.3}.
+Os valores destas análises serão adicionados (substituídos) aos dados obtidos no dia~\nameref{day:31-outubro-2024}.
 
-O FRX forneceu-nos um ficheiro \texttt{.csv} que continha os resultados das análises efetuadas.
-Esse ficheiro continha valores de concentração de diversos elementos químicos para cada um dos 5 tiros em cada uma das sub-amostras.
+A necessidade de refazer as análises para estas amostras assenta no facto de o equipamento não ter feito leituras de alguns elementos em alguns dos 5~tiros realizados.
+Portanto, é necessário refazer a análise FRX para estas amostras para que a média, que vai ser calculada, seja correta e que os resultados sejam representativos.
 
-O tratamento dos dados é necessário e vão consistir nas seguintes etapas:
-\begin{enumerate}
-    \item Análise exploratória inicial:
-    \begin{enumerate}
-        \item Verificar valores médios e variabilidade: analisar a média e o desvio padrão nos cinco tiros de cada amostra;
-        \item Visualização dos dados: construção de gráficos de bigodes (\emph{box plots}) para cada elemento em cada amostra.
-        \begin{marginfigure}
-            \includegraphics[width=\linewidth]{figures/exemplo_boxplot}
-            \caption{Exemplo de um gráfico de bigodes.}
-            \label{fig:boxplot_example}
-        \end{marginfigure}
-    \end{enumerate}
-    \item Cálculo de Estatísticas Descritivas:
-    \begin{enumerate}
-        \item Para cada elemento de cada amostra, calcular o valor da média geral e do desvio padrão entre os tiros.
-        A média geral representa o valor médio do elemento para a amostra, enquanto o desvio padrão mostra a variabilidade entre os tiros;
-        \item Calcular o coeficiente de variação (CV):
-        \marginnote[0.5cm]{
-            \begin{equation*}
-            CV = \frac{\text{desvio padrão}}{\text{média}}\times 100
-            \end{equation*}
-        }
-        O CV indica a variabilidade em relação à média e é útil para comparar a consistência de diferentes elementos.
-    \end{enumerate}
-    \item Análise de Outliers:
-    \begin{enumerate}
-        \item Analisar os outliers para cada elemento em cada amostra.
-        Dependendo da dispersão observada, identificar tiros atípicos (por exemplo, valores que se afastam mais de 2 ou 3 desvios padrão da média);
-        \item Decidir se esses outliers devem ser mantidos ou removidos, considerando fatores como a homogeneidade da amostra e a precisão do FRX\@.
-    \end{enumerate}
-    \item Cálculo da média Representativa e Intervalos de Confiança:
-    \begin{enumerate}
-        \item Calcular a média representativa final para cada elemento em cada amostra considerando os cinco tiros (ou menos, se tiver removido os outliers);
-        \item Construir intervalos de confiança para a média de cada elemento em cada amostra.
-        Para amostras pequenas (como 5 tiros), o intervalo de confiança é uma boa medida da variabilidade dos dados.
-    \end{enumerate}
-    \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Exemplo de como organizar os dados:
-\begin{table}[!htb]
-    \centering
-    \caption{Organização dos dados.}
-    \label{tab:organizacao-dos-dados}
-    \begin{tabular}{@{}lccccc@{}}
-        \toprule
-        \textbf{Amostra} & \textbf{Elemento} & \bm{$\overline{x}$} & \bm{$\sigma$} & \textbf{CV} & \textbf{Int. Conf.}  \\ \midrule
-        A01 & \ce{Fe} & xx.x & x.x & x.x & [xx.x; xx.x] \\
-        A02 & \ce{Cu} & xx.x & x.x & x.x & [xx.x; xx.x] \\
-        \ldots & \ldots & \ldots & \ldots & \ldots & \ldots \\
-        \bottomrule
-    \end{tabular}
-\end{table}
-
-\marginnote{Na Tabela~\ref{tab:organizacao-dos-dados}, $\overline{x}$ representa a média e $\sigma$ o desvio padrão.}
-
+%\newday{5 Novembro 2024}
+%
+%\subsection{Estratégia de Tratamento dos Dados de FRX}\label{subsec:estrategia-tratamento-dados-frx}
+%
+%O FRX forneceu-nos um ficheiro \texttt{.csv} que continha os resultados das análises efetuadas.
+%Esse ficheiro continha valores de concentração de diversos elementos químicos para cada um dos 5 tiros em cada uma das sub-amostras.
+%
+%O tratamento dos dados é necessário e vão consistir nas seguintes etapas:
+%\begin{enumerate}
+%    \item Análise exploratória inicial:
+%    \begin{enumerate}
+%        \item Verificar valores médios e variabilidade: analisar a média e o desvio padrão nos cinco tiros de cada amostra;
+%        \item Visualização dos dados: construção de gráficos de bigodes (\emph{box plots}) para cada elemento em cada amostra.
+%        \begin{marginfigure}
+%            \includegraphics[width=\linewidth]{figures/exemplo_boxplot}
+%            \caption{Exemplo de um gráfico de bigodes.}
+%            \label{fig:boxplot_example}
+%        \end{marginfigure}
+%    \end{enumerate}
+%    \item Cálculo de Estatísticas Descritivas:
+%    \begin{enumerate}
+%        \item Para cada elemento de cada amostra, calcular o valor da média geral e do desvio padrão entre os tiros.
+%        A média geral representa o valor médio do elemento para a amostra, enquanto o desvio padrão mostra a variabilidade entre os tiros;
+%        \item Calcular o coeficiente de variação (CV):
+%        \marginnote[0.5cm]{
+%            \begin{equation*}
+%            CV = \frac{\text{desvio padrão}}{\text{média}}\times 100
+%            \end{equation*}
+%        }
+%        O CV indica a variabilidade em relação à média e é útil para comparar a consistência de diferentes elementos.
+%    \end{enumerate}
+%    \item Análise de Outliers:
+%    \begin{enumerate}
+%        \item Analisar os outliers para cada elemento em cada amostra.
+%        Dependendo da dispersão observada, identificar tiros atípicos (por exemplo, valores que se afastam mais de 2 ou 3 desvios padrão da média);
+%        \item Decidir se esses outliers devem ser mantidos ou removidos, considerando fatores como a homogeneidade da amostra e a precisão do FRX\@.
+%    \end{enumerate}
+%    \item Cálculo da média Representativa e Intervalos de Confiança:
+%    \begin{enumerate}
+%        \item Calcular a média representativa final para cada elemento em cada amostra considerando os cinco tiros (ou menos, se tiver removido os outliers);
+%        \item Construir intervalos de confiança para a média de cada elemento em cada amostra.
+%        Para amostras pequenas (como 5 tiros), o intervalo de confiança é uma boa medida da variabilidade dos dados.
+%    \end{enumerate}
+%    \end{enumerate}
+%
+%Exemplo de como organizar os dados:
+%\begin{table}[!htb]
+%    \centering
+%    \caption{Organização dos dados.}
+%    \label{tab:organizacao-dos-dados}
+%    \begin{tabular}{@{}lccccc@{}}
+%        \toprule
+%        \textbf{Amostra} & \textbf{Elemento} & \bm{$\overline{x}$} & \bm{$\sigma$} & \textbf{CV} & \textbf{Int. Conf.}  \\ \midrule
+%        A01 & \ce{Fe} & xx.x & x.x & x.x & [xx.x; xx.x] \\
+%        A02 & \ce{Cu} & xx.x & x.x & x.x & [xx.x; xx.x] \\
+%        \ldots & \ldots & \ldots & \ldots & \ldots & \ldots \\
+%        \bottomrule
+%    \end{tabular}
+%\end{table}
+%
+%\marginnote{Na Tabela~\ref{tab:organizacao-dos-dados}, $\overline{x}$ representa a média e $\sigma$ o desvio padrão.}
+%
+%\subsection{Tratamento dos Dados de FRX}\label{subsec:tratamento-dos-dados-de-frx}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
