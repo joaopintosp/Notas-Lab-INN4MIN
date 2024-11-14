@@ -1,0 +1,73 @@
+\begin{figure}[!htb]
+    \centering
+    \begin{tikzpicture}[font=\footnotesize]
+    \begin{axis}[
+        xlabel={Crivo (mm)},
+        ylabel={Cumulante Inferior (\%)},
+        xmode=log,
+        xtick={0.1, 1, 10},
+        xticklabel style={/pgf/number format/fixed},
+        log ticks with fixed point,
+        xmin=0.1, xmax=10,
+        ymin=93, ymax=100,
+        ylabel near ticks,
+        yticklabel=\pgfmathprintnumber{\tick},
+        width=10cm,
+        height=8cm,
+        grid=both,
+        grid style={dashed, gray!30},
+        enlarge x limits={abs=0.5cm},
+        axis lines= left,
+        legend pos=south east,
+        height=6.5cm,
+    ]
+    % Série A01
+    \addplot[
+        mark=*,
+        mark options={scale=1, fill=customblue},
+        color=customblue,
+        line width=0.7pt
+    ] coordinates {
+        (1.18, 100.00)
+        (0.850, 99.54)
+        (0.600, 99.12)
+        (0.425, 98.43)
+        (0.300, 95.42)
+    };
+    \addlegendentry{A01}
+
+    % Série A04
+    \addplot [
+        mark=*,
+        mark options={scale=1, fill=customorange},
+        color=customorange,
+        line width=0.7pt
+    ] coordinates {
+        (1.18, 100.00)
+        (0.850, 99.54)
+        (0.600, 99.12)
+        (0.425, 98.34)
+        (0.300, 95.34)
+    };
+    \addlegendentry{A04}
+
+    % Série A08
+    \addplot[
+        mark=*,
+        mark options={scale=1, fill=customgreen},
+        color=customgreen,
+        line width=0.7pt
+    ]  coordinates {
+        (1.18, 100.00)
+        (0.850, 99.55)
+        (0.600, 99.13)
+        (0.425, 98.20)
+        (0.300, 94.18)
+    };
+    \addlegendentry{A08}
+
+    \end{axis}
+    \end{tikzpicture}
+    \caption{Curva granulométrica.}
+    \label{fig:curva_granulometrica}
+\end{figure}

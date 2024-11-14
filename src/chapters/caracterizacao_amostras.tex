@@ -50,11 +50,11 @@ Quando este terminou, a totalidade da amostra foi desagregada e peneirada com o 
 
 Com o material já desagregado, era necessário agora homogeneizar a amostra.
 Para isso, foi utilizado o separador \emph{Jones}\sidenote{O separador \emph{Jones}, ou em inglês \emph{riffle splitter}, é utilizado para separar amostras em duas partes quase idênticas.} (esquartelador).
-Separou-se a amostra de $\approx$~15~kg em duas amostras de $\approx$~7,5~kg cada - amostra A e amostra B\@.
+Separou-se a amostra de $\approx$~15~kg em duas amostras de $\approx$~7,5~kg cada - amostra \texttt{A} e amostra \texttt{B}\@.
 
 A amostra B vai ser guardada.
-Foi armazenada em dois sacos de plástico - B$_1$ = 3,36~kg e B$_2$ = 4,28~kg.
-A amostra A será posteriormente separada em sacos de $\approx$~1~kg.
+Foi armazenada em dois sacos de plástico - \texttt{B1} = 3,36~kg e \texttt{B2} = 4,28~kg.
+A amostra \texttt{A} será posteriormente separada em sacos de $\approx$~1~kg.
 
 \hrulefill
 \pagebreak
@@ -87,14 +87,14 @@ A massa de cada saco está apresentada na Tabela~\ref{tab:massa_sacos}.
     \begin{tabular}{@{}lc@{}}
         \toprule
         \textbf{Amostra} & \textbf{Massa (g)} \\ \midrule
-        \textcolor{CornflowerBlue}{A$_{01}$} & \textcolor{CornflowerBlue}{1020,66} \\
+        \textcolor{customblue}{A$_{01}$} & \textcolor{customblue}{1020,66} \\
         A$_{02}$ & 836,56 \\
         A$_{03}$ & 802,66 \\
-        \textcolor{YellowOrange}{A$_{04}$} & \textcolor{YellowOrange}{1052,15} \\
+        \textcolor{customorange}{A$_{04}$} & \textcolor{customorange}{1052,15} \\
         A$_{05}$ & 986,89 \\
         A$_{06}$ & 786,81 \\
         A$_{07}$ & 1138,15 \\
-        \textcolor{YellowGreen}{A$_{08}$} & \textcolor{YellowGreen}{1044,50} \\ \midrule
+        \textcolor{customgreen}{A$_{08}$} & \textcolor{customgreen}{1044,50} \\ \midrule
         \textbf{Total} & 7590,38 \\ \bottomrule
     \end{tabular}
     \caption{Massa dos amostras separadas com o \emph{Jones}.}
@@ -112,7 +112,7 @@ A massa de cada saco está apresentada na Tabela~\ref{tab:massa_sacos}.
 
 Hoje foi realizada a crivagem do material previamente separado.
 Escolheu-se, aleatoriamente, três dos oito sacos.
-Os sacos escolhidos para crivagem foram os seguintes: A$_{01}$, A$_{04}$ e A$_{08}$; destacados na Tabela~\ref{tab:massa_sacos}.
+Os sacos escolhidos para crivagem foram os seguintes: \texttt{A01}, \texttt{A04} e \texttt{A08}; destacados na Tabela~\ref{tab:massa_sacos}.
 
 A série de crivos utilizada para crivagem foi a seguinte:
 
@@ -156,12 +156,8 @@ Após cada crivagem, a massa das frações de material retido em cada um dos cri
 
 Foi efetuada uma análise granulométrica do material retido em cada crivo.
 A curva granulométrica está apresentada na Figura~\ref{fig:curva_granulometrica}.
-\begin{figure}[!htb]
-    \centering
-    \includegraphics[width=0.9\linewidth]{figures/curva_granulometrica}
-    \caption{Curva granulométrica.}
-    \label{fig:curva_granulometrica}
-\end{figure}
+
+\input{figures/curva-granulometrica-crivagem}
 
 Como existe muito pouco material acima do calibre 0,300~mm (<~5~\%), juntou-se todas as frações de material novamente e vai-se realizar medições no granulómetro laser.
 
@@ -184,7 +180,7 @@ Continuando o trabalho, as frações das amostras previamente crivadas foram col
     \label{fig:granulometro_laser}
 \end{figure}
 
-Começou-se por analisar a amostra A$_{01}$\sidenote[][-0.25cm]{As amostras foram analisadas separadamente, mas com os resultados obtidos de todas as subamostras poderemos generalizar para a amostra tal-qual ($\approx$~15~kg).}.
+Começou-se por analisar a amostra \texttt{A01}\sidenote[][-0.25cm]{As amostras foram analisadas separadamente, mas com os resultados obtidos de todas as subamostras poderemos generalizar para a amostra tal-qual ($\approx$~15~kg).}.
 A primeira análise foi feita com a amostra seca (ou seja, foi colocada no granulómetro sem estar misturada em água), de forma a avaliar a distribuição do tamanho das partículas.
 Verificou-se que havia partículas ainda agregadas\sidenote{Como estamos a trabalhar com material de calibre muito fino, é normal haver agregação de partículas. Isto pode ser combatido com uma agitação forte; uso de ultra-som ou mistura prévia em água para desagregar.}.
 
@@ -267,13 +263,6 @@ Foram realizados cinco ``tiros'' por amostra, com um tempo de análise de 30~seg
 No fim de cada tiro, foi-se alterando a posição da amostra dentro do equipamento, para que fossem analisadas diferentes partes da amostra de forma a que os resultados sejam representativos.
 
 Os resultados das análises foram descarregados em formato \texttt{.csv}.
-Foi necessário trabalhar o ficheiro descarregado para ser possível analisar os dados.
-Dessa forma, escreveu-se o seguinte código em Python:
-
-\marginnote{A linha 1 importa o \emph{pandas}, uma biblioteca necessária. A linha 3 permite ler o ficheiro \texttt{.csv} como um \emph{pandas dataframe}. A linha 5 define as colunas que irão ser removidas - são referentes a informações fornecidas pelo equipamento FRX que não nos interessam. A linha 8 remove as colunas especificadas anteriormente. A linha 10 remove as colunas que contém o desvio padrão (se for necessário será calculado posteriormente) e as colunas que não contém informação (elementos químicos não presentes). A linha 12 guarda o ficheiro com as alterações, convertendo-o para Excel.}
-
-\lstinputlisting[language=Python,label={lst:python_code}]{code/tratamento_dados_frx.py}
-
 Os dados irão ser posteriormente analisados.
 
 \hrulefill
@@ -303,14 +292,14 @@ Do divisor de amostras obteu-se 54,15~g (\texttt{A08.3.1}) que foi depois dividi
 Estes cinco copos foram depois colocados na mufla.
 A mufla foi programada para aquecer até 700~\graus, manter os 700~\graus \, durante 1~hora e depois desligar-se automaticamente.
 As amostras ficam a arrefecer dentro da mufla até ao dia seguinte.
-\begin{marginfigure}
+\begin{marginfigure}[1\baselineskip]
     \centering
     \includegraphics[width=0.7\textwidth]{figures/Mufla}
     \caption{Mufla utilizada para aquecer a amostra.}
     \label{fig:mufla}
 \end{marginfigure}
 
-A amostra \texttt{A08.3} foi reconstituída com o material que não foi para os copos da mufla e foi medida a massa - 215.03~g (com o peso do saco).
+A amostra \texttt{A08.3} foi reconstituída com o material que não foi para os copos da mufla e foi medida a massa: 215.03~g (com o peso do saco).
 
 No dia seguinte, com a amostra já arrefecida, será realizada a digestão ácida, sendo que o procedimento será posteriormente explicado.
 
@@ -322,7 +311,7 @@ No dia seguinte, com a amostra já arrefecida, será realizada a digestão ácid
 
 Retiraram-se as amostras que foram colocadas na mufla no dia~\nameref{day:7-novembro-2024}.
 O material, anteriormente com uma cor beje (como se pode ver na Figura~\ref{fig:amostra_no_moinho}), encontra-se agora com uma cor avermelhada - Figura~\ref{fig:amostra-apos-mufla}.
-\begin{marginfigure}
+\begin{marginfigure}[-3\baselineskip]
     \centering
     \includegraphics[width=0.9\linewidth]{figures/Amostra após mufla}
     \caption{Amostra após mufla a 700\graus.}
@@ -336,7 +325,7 @@ A relação vai ser de 1:3, ou seja, 6~ml de \ce{HNO_3} para 18~ml de \ce{HCl}, 
 A quantidade específicada de cada ácido é colocada em cada um dos 5~copos da Figura~\ref{fig:amostra-a-ser-atacada}, deixando a reação decorrer durante 1~hora e 30~minutos.
 Serão feitos 3~ataques, ou seja, após cada hora e meia será colocado de novo ácido nítrico e ácido clorídrico.
 Repete-se esta operação três vezes, totalizando em 4~horas e 30~minutos de reação.
-\begin{marginfigure}[-1\baselineskip]
+\begin{marginfigure}[\baselineskip]
     \centering
     \includegraphics[width=0.9\linewidth]{figures/Amostra a ser atacada - digestão ácida}
     \caption{Amostra a ser atacada com ácido.}
@@ -352,79 +341,128 @@ O resíduo foi colocado numa placa de Petri.
 Colocou-se um pouco de água destilada no copo para facilitar a transferência do resíduo para a placa.
 Fez-se isto para cada um dos 5~copos, resultando nas amostras apresentadas na Figura~\ref{fig:amostra-apos-digestao}.
 
-\begin{marginfigure}[-5\baselineskip]
+\begin{marginfigure}[-3\baselineskip]
     \centering
     \includegraphics[width=0.8\linewidth]{figures/Amostra após Digestão}
     \caption{Amostra após a digestão.}
     \label{fig:amostra-apos-digestao}
 \end{marginfigure}
 
-Posteriormente será feita a absorção atómica com o material presente nos balões volumétricos.
+Posteriormente será feita a filtragem do licor e do resíduo, do material presente nos balões volumétricos, para depois se proceder à absorção atómica.
 Ainda será decidido o que será feito ao resíduo, pode possívelmente ser descartado.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\newday{5 Novembro 2024}
-%
-%\subsection{Estratégia de Tratamento dos Dados de FRX}\label{subsec:estrategia-tratamento-dados-frx}
-%
-%O FRX forneceu-nos um ficheiro \texttt{.csv} que continha os resultados das análises efetuadas.
-%Esse ficheiro continha valores de concentração de diversos elementos químicos para cada um dos 5 tiros em cada uma das sub-amostras.
-%
-%O tratamento dos dados é necessário e vão consistir nas seguintes etapas:
-%\begin{enumerate}
-%    \item Análise exploratória inicial:
-%    \begin{enumerate}
-%        \item Verificar valores médios e variabilidade: analisar a média e o desvio padrão nos cinco tiros de cada amostra;
-%        \item Visualização dos dados: construção de gráficos de bigodes (\emph{box plots}) para cada elemento em cada amostra.
-%        \begin{marginfigure}
-%            \includegraphics[width=\linewidth]{figures/exemplo_boxplot}
-%            \caption{Exemplo de um gráfico de bigodes.}
-%            \label{fig:boxplot_example}
-%        \end{marginfigure}
-%    \end{enumerate}
-%    \item Cálculo de Estatísticas Descritivas:
-%    \begin{enumerate}
-%        \item Para cada elemento de cada amostra, calcular o valor da média geral e do desvio padrão entre os tiros.
-%        A média geral representa o valor médio do elemento para a amostra, enquanto o desvio padrão mostra a variabilidade entre os tiros;
-%        \item Calcular o coeficiente de variação (CV):
-%        \marginnote[0.5cm]{
-%            \begin{equation*}
-%            CV = \frac{\text{desvio padrão}}{\text{média}}\times 100
-%            \end{equation*}
-%        }
-%        O CV indica a variabilidade em relação à média e é útil para comparar a consistência de diferentes elementos.
-%    \end{enumerate}
-%    \item Análise de Outliers:
-%    \begin{enumerate}
-%        \item Analisar os outliers para cada elemento em cada amostra.
-%        Dependendo da dispersão observada, identificar tiros atípicos (por exemplo, valores que se afastam mais de 2 ou 3 desvios padrão da média);
-%        \item Decidir se esses outliers devem ser mantidos ou removidos, considerando fatores como a homogeneidade da amostra e a precisão do FRX\@.
-%    \end{enumerate}
-%    \item Cálculo da média Representativa e Intervalos de Confiança:
-%    \begin{enumerate}
-%        \item Calcular a média representativa final para cada elemento em cada amostra considerando os cinco tiros (ou menos, se tiver removido os outliers);
-%        \item Construir intervalos de confiança para a média de cada elemento em cada amostra.
-%        Para amostras pequenas (como 5 tiros), o intervalo de confiança é uma boa medida da variabilidade dos dados.
-%    \end{enumerate}
-%    \end{enumerate}
-%
-%Exemplo de como organizar os dados:
-%\begin{table}[!htb]
-%    \centering
-%    \caption{Organização dos dados.}
-%    \label{tab:organizacao-dos-dados}
-%    \begin{tabular}{@{}lccccc@{}}
-%        \toprule
-%        \textbf{Amostra} & \textbf{Elemento} & \bm{$\overline{x}$} & \bm{$\sigma$} & \textbf{CV} & \textbf{Int. Conf.}  \\ \midrule
-%        A01 & \ce{Fe} & xx.x & x.x & x.x & [xx.x; xx.x] \\
-%        A02 & \ce{Cu} & xx.x & x.x & x.x & [xx.x; xx.x] \\
-%        \ldots & \ldots & \ldots & \ldots & \ldots & \ldots \\
-%        \bottomrule
-%    \end{tabular}
-%\end{table}
-%
-%\marginnote{Na Tabela~\ref{tab:organizacao-dos-dados}, $\overline{x}$ representa a média e $\sigma$ o desvio padrão.}
-%
-%\subsection{Tratamento dos Dados de FRX}\label{subsec:tratamento-dos-dados-de-frx}
+\hrulefill
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\newday{9 Novembro 2024}
+%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newday{12 Novembro 2024}
+
+Hoje realizou-se a filtração do material proveniente da digestão ácida realizada no dia~\nameref{day:8-novembro-2024}.
+Para isso utilizou-se um Kitsato\footnote{O balão kitsato é um tipo de vidraria de laboratório. Normalmente usado com um filtro de Büchner em filtrações em vácuo.}, um filtro de membrana e o porta-filtro (não me recordo no nome).
+Este sistema foi conectado a uma bomba para se realizar a filtração em vácuo.
+
+Foram colocadas as amostras da Figura~\ref{fig:amostra-apos-digestao}, cuidadosamente, no sistema de filtração, agitando o balão volumétrico para que o resíduo que estava depositado no fundo e o líquido se misturassem.
+
+Foram realizadas duas filtrações para cada amostra.
+
+O resíduo sólido foi separado para uma placa de Petri.
+As amostras líquidas foram armazenadas para se realizar a absorção atómica e os resíduos foram embrulhados em Parafilm.
+
+\hrulefill
+
+\newthought{Fora do Laboratório} é melhor fazer um estudo dos conceitos teóricos relativos à absorção atómica, para que, na altura de efetuar essa análise, os conhecimentos básicos estejam consolidados e que se perceba o funcionamento teórico antes de se passar para a prática.
+
+\subsection*{Espetroscopia}\label{subsec:espetroscopia}
+
+Antes de falarmos sobre absorção atómica, devemos ter em consideração o conceito de espetroscopia.
+A espetroscopia é a interação entre radiação\sidenote{O termo radiação, em física, apenas significa a propagação de energia de um ponto a outro. Por vezes este termo é usado comumente com outra conotação.} e matéria.
+Isto acontece, quando os eletrões absorvem uma quantidade discreta de energia que os faz transitar, ou excitar, para órbitas atómicas de maior energia.
+A energia que é absorvida pelos eletrões é sempre igual à diferença de energia entre as orbitas de transição.
+
+É importante ter em consideração que órbitas de diferentes elementos têm níveis de energia diferentes.
+Isto faz com que a quantidade de energia que é absorvida pelos eletrões seja também diferente para diferentes elementos.
+Quando os eletrões excitados voltam para a sua orbita original, vão emitir a mesma quantidade de energia que foi previamente absorvida, sob a forma de radiação eletromagnética\sidenote{Radiação eletromagnética, ou REM, pode ser classificada de acordo com a sua frequência, a partir da qual diferentes comprimentos de onda estão associados, nas seguintes faixas: ondas de rádio, micro-ondas, radiação terahertz, radiação infravermelha, luz vísivel, radiação ultravioleta, raios X e radiação gama.}.
+
+Sendo assim, como a quantidade de energia \textbf{absorvida} varia para diferentes elementos, a quantidade de energia \textbf{emitida} também varia para diferentes elementos.
+
+\subsection*{Espetroscopia de absorção Atómica}\label{subsec:absorcao-atomica}
+
+A espetroscopia de absorção atómica\sidenote{Ou AAS, do inglês \emph{Atomic Absorption Spectroscopy.}}, ou apenas absorção atómica, é uma técnica quantitativa que analisa a concentração de iões metálicos numa amostra, pelo uso de~\nameref{subsec:espetroscopia}.
+
+\begin{marginfigure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{figures/Diagrama - espetroscopia}
+    \caption{Transição de eletrões para diferentes níveis de energia.}
+    \label{fig:diagrama-espetroscopia}
+\end{marginfigure}
+
+Os eletrões nos iões e átomos metálicos podem absorver REM para transitarem para órbitas de maior energia, como demonstrado na Figura~\ref{fig:diagrama-espetroscopia}.
+A absorção atómica baseia-se no facto de que a quantidade de iões metálicos determina a quantidade de energia que é absorvida.
+Mais iões metálicos existentes, maior a absorção de energia.
+
+A absorção atómica é uma técnica extremamente sensível, pois é capaz de determinar e medir a presença de espécies metálicas através da quantidade de REM absorvida, mesmo em amostras com uma quantidade mínima de metal.
+
+A relação entre a quantidade de iões metálicos ou de átomos presentes numa amostra e a quantidade de radiação que é absorvida é dada pela Lei de Beer-Lambert\sidenote[][-1.30cm]{A Lei de Beer-Lambert, também conhecida como Lei de Beer ou Lei de Beer-Lambert-Bouguer é uma relação empírica que, na ótica, relaciona a absorção de luz com as propriedades do material atravessado por ela.}, que diz que a quantidade de REM absorvida é \textbf{diretamente proporcional} à concentração de iões metálicos ou átomos.
+Ou seja, se a concentração de iões metálicos ou átomos for baixa a absorção de energia também será baixa; se a concentração for alta a absorção de energia também será alta.
+Assim, ao medir a quantidade de REM que é absorvida é possível calcular a concentração de um metal em específico.
+
+\hrulefill
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newday{13 Novembro 2024}
+
+Hoje efetuou-se a absorção atómica.
+O equipamento utilizado foi o da Figura~\ref{fig:equipamento-absorcao-atomica}.
+
+\begin{marginfigure}[8\baselineskip]
+    \centering
+    \includegraphics[width=0.95\linewidth]{figures/Absorção atómica}
+    \caption{Equipamento para AAS (\href{https://www.analytik-jena.com/products/chemical-analysis/elemental-analysis/aas/zeenit-series/}{Analytik Jena ZEEnit 700P Furnace Vision}).}
+    \label{fig:equipamento-absorcao-atomica}
+\end{marginfigure}
+
+É necessário fazer uma preparação prévia do equipamento para se realizar a análise, cerca de uma ou duas horas deve ser suficiente.
+Os procedimentos necessários para o funcionamento correto do equipamento são bastante extensos e portanto não serão aqui abordados, no entanto deixa-se aqui \href{https://www.analytik-jena.com/fileadmin/import/assets/0000006182_Manual_ZEEnit_700_P_en.pdf}{o manual de funcionamento}.
+Também existe um guia de manuseamento, bastante detalhado, disponível no laboratório.
+
+Foi realizada uma curva de calibração, com soluções padrão de diferentes concentrações em \ce{Au}, desde 2~ppm a 10~ppm.
+A curva está apresentada na Figura~\ref{fig:curva-calibracao-aas}.
+
+\input{figures/grafico-curva-calibracao-aas}
+
+Inicialmente, foi realizada uma medição com água destilada, com o intuito de verificar a ausência de contaminantes residuais e garantir a estabilidade da linha de base do equipamento.
+De seguida, procedeu-se à análise da primeira amostra.
+Após cada medição, uma nova leitura foi realizada com água destilada, assegurando a limpeza do sistema de introdução e prevenindo interferências na análise subsequente.
+Esse processo foi repetido para cada uma das cinco amostras, intercalando medições com água entre as leituras de cada amostra.
+
+No fim da análise das cinco amostras, obteve-se os valores de absorção de cada uma das amostras.
+Com esses valores, substituiu-se na reta da curva de calibração para se obter os valores de concentração em \ce{Au}.
+\[
+    \text{Absorção} = 0,0362 \times \text{Concentração} + 0,0035
+\]
+
+Dessa forma, obteve-se a Tabela~\ref{tab:concentracao-au-fase-liquida} referente às concentrações em \ce{Au} na fase líquida das cinco amostras.
+
+\begin{table}[!ht]
+    \centering
+    \begin{tabular}{@{}lcc@{}}
+        \toprule
+        \textbf{Amostra} & \textbf{Absorção} & \textbf{Conc. (mg/L)} \\ \midrule
+        \textbf{1} & 0,08427 & 2,23 \\
+        \textbf{2} & 0,06505 & 1,70 \\
+        \textbf{3} & 0,07377 & 1,94 \\
+        \textbf{4} & 0,06751 & 1,77 \\
+        \textbf{5} & 0,08440 & 2,23 \\ \bottomrule
+    \end{tabular}
+    \caption{Concentração em \ce{Au} na fase líquida.}
+    \label{tab:concentracao-au-fase-liquida}
+\end{table}
+
+\hrulefill
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
