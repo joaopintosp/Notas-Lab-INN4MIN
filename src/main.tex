@@ -9,7 +9,8 @@
 \newcommand{\userName}{João Sá Pereira}
 \newcommand{\institution}{FEUP}
 
-\usepackage{lab_notes}
+\usepackage{structure/lab_notes}
+\usepackage{tabu}
 
 
 %\title{An Example of the Usage of the Tufte-Handout Style\thanks{Inspired by Edward~R. Tufte!}}
@@ -51,15 +52,18 @@
 	\end{planos}
 
 	\vspace*{\fill}
-
 	\newpage
-
-	\pagestyle{fancy}
 
 	%%%%%%%%%%%% Begining of document %%%%%%%%%%%%%%%%%%%%%%
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\input{chapters/caracterizacao_amostras}
+	\input{structure/parte1}
+	\newpage
+	\input{chapters/caracterizacao_amostras}
+	\newpage
+	\input{structure/parte2}
+	\newpage
+	\input{chapters/lixiviacoes}
 
 %\cleardoublepage
 %\pagestyle{plain}

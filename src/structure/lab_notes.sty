@@ -1,11 +1,12 @@
 %! suppress = MissingLabel
 %! suppress = EscapeHashOutsideCommand
-\ProvidesPackage{lab_notes}
+\ProvidesPackage{structure/lab_notes}
 %\date{28 March 2010} % without \date command, current date is supplied
 
 % Packages
 \RequirePackage{changepage, fancyhdr, hyperref, optparams, paralist, placeins, ragged2e, setspace, textcase, textcomp, titlesec, titletoc, xcolor, xifthen, helvet, mathpazo, soul,natbib}
-\RequirePackage{amsmath,mathtools,amsfonts,bigdelim,booktabs,epsfig,framed, multibib, multirow,pdflscape,url,wrapfig,bm,units,multicol,lipsum,nameref}
+\RequirePackage{amsmath,mathtools,amsfonts,bigdelim,booktabs,epsfig,framed, multibib, multirow,pdflscape,url,wrapfig,bm,multicol,lipsum,nameref,siunitx}
+%\RequirePackage{units} % Removido por conflito com siunitx
 %\geometry{showframe} % display margins for debugging page layout
 \RequirePackage[version=4]{mhchem}
 \RequirePackage{hyperref}
@@ -236,3 +237,10 @@
 %\renewcommand\myworries[1]{} % uncomment to remove all myworries notes
 
 \newcommand{\graus}{$^{\circ}$C}
+
+\newcommand{\TSP}{tiossulfato de sódio pentahidratado}
+\newcommand{\tsp}{\ce{Na2S2O3.5H2O}}
+\newcommand{\SCP}{sulfato de cobre pentahidratado}
+\newcommand{\scp}{\ce{CuSO4.5H2O}}
+\newcommand{\AMO}{amónia a 25~\%}
+\newcommand{\amo}{\ce{NH3}}

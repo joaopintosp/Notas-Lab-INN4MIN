@@ -1,5 +1,6 @@
 %! Author = joaos
 %! Date = 02/11/2024
+\pagestyle{fancy}
 
 \section*{Preparação e Caracterização de Amostras}
 
@@ -39,8 +40,8 @@ Deixou-se material para o dia seguinte.
 
 \textit{Na Figura~\ref{fig:amostra_no_moinho} temos a amostra de material dentro do tambor do moinho.}
 
-\begin{marginfigure}
-    \includegraphics[width=\linewidth]{figures/amostra_no_moinho}
+\begin{marginfigure}[4\baselineskip]
+    \includegraphics[width=0.9\linewidth]{figures/amostra_no_moinho}
     \caption{Amostra de material no tambor do moinho.}
     \label{fig:amostra_no_moinho}
 \end{marginfigure}
@@ -265,8 +266,6 @@ No fim de cada tiro, foi-se alterando a posição da amostra dentro do equipamen
 Os resultados das análises foram descarregados em formato \texttt{.csv}.
 Os dados irão ser posteriormente analisados.
 
-\hrulefill
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newday{6 Novembro 2024}
@@ -355,11 +354,6 @@ Ainda será decidido o que será feito ao resíduo, pode possívelmente ser desc
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\newday{9 Novembro 2024}
-%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \newday{12 Novembro 2024}
 
 Hoje realizou-se a filtração do material proveniente da digestão ácida realizada no dia~\nameref{day:8-novembro-2024}.
@@ -375,7 +369,7 @@ As amostras líquidas foram armazenadas para se realizar a absorção atómica e
 
 \hrulefill
 
-\newthought{Fora do Laboratório} é melhor fazer um estudo dos conceitos teóricos relativos à absorção atómica, para que, na altura de efetuar essa análise, os conhecimentos básicos estejam consolidados e que se perceba o funcionamento teórico antes de se passar para a prática.
+\newthought{Fora do Laboratório} decidiu-se fazer um estudo prévio dos conceitos teóricos relativos à absorção atómica, para que, na altura de efetuar a análise, os conhecimentos básicos estejam consolidados e que se perceba o funcionamento do equipamento.
 
 \subsection*{Espetroscopia}\label{subsec:espetroscopia}
 
@@ -392,7 +386,7 @@ Sendo assim, como a quantidade de energia \textbf{absorvida} varia para diferent
 
 \subsection*{Espetroscopia de absorção Atómica}\label{subsec:absorcao-atomica}
 
-A espetroscopia de absorção atómica\sidenote{Ou AAS, do inglês \emph{Atomic Absorption Spectroscopy.}}, ou apenas absorção atómica, é uma técnica quantitativa que analisa a concentração de iões metálicos numa amostra, pelo uso de~\nameref{subsec:espetroscopia}.
+A espetroscopia de absorção atómica\sidenote{Ou AAS, do inglês \emph{Atomic Absorption Spectroscopy.}}, ou apenas absorção atómica, é uma técnica quantitativa que analisa a concentração de iões metálicos numa amostra, pelo uso de espetroscopia.
 
 \begin{marginfigure}
     \centering
@@ -409,7 +403,7 @@ A absorção atómica é uma técnica extremamente sensível, pois é capaz de d
 
 A relação entre a quantidade de iões metálicos ou de átomos presentes numa amostra e a quantidade de radiação que é absorvida é dada pela Lei de Beer-Lambert\sidenote[][-1.30cm]{A Lei de Beer-Lambert, também conhecida como Lei de Beer ou Lei de Beer-Lambert-Bouguer é uma relação empírica que, na ótica, relaciona a absorção de luz com as propriedades do material atravessado por ela.}, que diz que a quantidade de REM absorvida é \textbf{diretamente proporcional} à concentração de iões metálicos ou átomos.
 Ou seja, se a concentração de iões metálicos ou átomos for baixa a absorção de energia também será baixa; se a concentração for alta a absorção de energia também será alta.
-Assim, ao medir a quantidade de REM que é absorvida é possível calcular a concentração de um metal em específico.
+Assim, muito resumidamente, ao medir a quantidade de REM que é absorvida é possível calcular a concentração de um metal em específico.
 
 \hrulefill
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -446,23 +440,44 @@ Com esses valores, substituiu-se na reta da curva de calibração para se obter 
     \text{Absorção} = 0,0362 \times \text{Concentração} + 0,0035
 \]
 
-Dessa forma, obteve-se a Tabela~\ref{tab:concentracao-au-fase-liquida} referente às concentrações em \ce{Au} na fase líquida das cinco amostras.
+Dessa forma, obteve-se a Tabela~\ref{tab:aas-concentracao-au-fase-liquida} referente às concentrações em \ce{Au} na fase líquida das cinco amostras.
 
 \begin{table}[!ht]
     \centering
     \begin{tabular}{@{}lcc@{}}
         \toprule
         \textbf{Amostra} & \textbf{Absorção} & \textbf{Conc. (mg/L)} \\ \midrule
-        \textbf{1} & 0,08427 & 2,23 \\
-        \textbf{2} & 0,06505 & 1,70 \\
-        \textbf{3} & 0,07377 & 1,94 \\
-        \textbf{4} & 0,06751 & 1,77 \\
-        \textbf{5} & 0,08440 & 2,23 \\ \bottomrule
+        \textbf{Dig. 1} & 0,08427 & 2,23 \\
+        \textbf{Dig. 2} & 0,06505 & 1,70 \\
+        \textbf{Dig. 3} & 0,07377 & 1,94 \\
+        \textbf{Dig. 4} & 0,06751 & 1,77 \\
+        \textbf{Dig. 5} & 0,08440 & 2,23 \\ \bottomrule
     \end{tabular}
     \caption{Concentração em \ce{Au} na fase líquida.}
-    \label{tab:concentracao-au-fase-liquida}
+    \label{tab:aas-concentracao-au-fase-liquida}
 \end{table}
 
-\hrulefill
+\newpara
 
+Com estes valores da concentração em \ce{Au} na fase líquida, foi calculado, pela professora, o teor em \ce{Au} da amostra (alimentação).
+
+\begin{table*}[!ht]
+    \centering
+    \begin{tabular}{@{}lccccc@{}}
+        \toprule
+        \textbf{Amostra} & \textbf{Conc. (mg/L)} & \textbf{Qt. metal na sol. (mg)} & \textbf{Teor \ce{Au} (mg/g)} & \textbf{Teor \ce{Au} (\%)} & \textbf{Teor \ce{Au} (ppm)} \\ \midrule
+        \textbf{Dig. 1} & 2,23 & 0,1115 & 0,01115 & 0,001115 & 11,15 \\
+        \textbf{Dig. 2} & 1,7 & 0,085 & 0,0085 & 0,00085 & 8,5 \\
+        \textbf{Dig. 3} & 1,94 & 0,097 & 0,0097 & 0,00097 & 9,7 \\
+        \textbf{Dig. 4} & 1,77 & 0,0885 & 0,00885 & 0,000885 & 8,85 \\
+        \textbf{Dig. 5} & 2,23 & 0,1115 & 0,01115 & 0,001115 & 11,15 \\
+        \bottomrule
+    \end{tabular}
+\end{table*}
+
+\newpara
+
+Sendo que a média dos teores em \ce{Au} é de \textbf{9,87~ppm}.
+
+\hrulefill
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
