@@ -1,0 +1,52 @@
+\documentclass[a4paper]{tufte-handout}
+
+\usepackage[portuguese]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{csquotes}
+
+\newcommand{\workingDate}{\textsc{2024/2025}}
+\newcommand{\userName}{João Sá Pereira}
+\newcommand{\institution}{FEUP}
+
+\usepackage{structure/lab_notes}
+\input{structure/mymacros}
+
+
+%\title{An Example of the Usage of the Tufte-Handout Style\thanks{Inspired by Edward~R. Tufte!}}
+%
+%\author[The Tufte-LaTeX Developers]{The Tufte-\LaTeX\ Developers}
+%%%%%%%%%%%%%%% TITLE PAGE %%%%%%%%%%%%%%%
+\title{Notas de Laboratório}
+\subtitle{Bolsa de Investigação - INN4MIN}
+\author[João Sá Pereira]{João Sá Pereira}
+\date{2024/2025}
+\publisher{Faculdade de Engenharia da Universidade do Porto}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\selectlanguage{portuguese}
+    %%%%%%%%%%%%%%% TITLE %%%%%%%%%%%%%%%
+	\maketitlepage
+	\newpage
+	\input{structure/project}
+	\newpage
+
+	%%%%%%%%%%%% Begining of document %%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%	\input{structure/parte1}
+%	\newpage
+%	\input{chapters/caracterizacao_amostras}
+%	\newpage
+%	\input{structure/parte2}
+%	\newpage
+	\input{chapters/lixiviacoes}
+
+\nocite{*}
+\nobibliography{main}
+\bibliographystyle{plainnat}
+%\vspace*{\fill}
+
+\end{document}

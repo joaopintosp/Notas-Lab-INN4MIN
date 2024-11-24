@@ -4,7 +4,7 @@
 %\date{28 March 2010} % without \date command, current date is supplied
 
 % Packages
-\RequirePackage{changepage, fancyhdr, hyperref, optparams, paralist, placeins, ragged2e, setspace, textcase, textcomp, titlesec, titletoc, xcolor, xifthen, helvet, mathpazo, soul,natbib}
+\RequirePackage{changepage, fancyhdr, hyperref, optparams, paralist, placeins, ragged2e, setspace, textcase, textcomp, titlesec, titletoc, xcolor, xifthen, helvet, mathpazo, soul}
 \RequirePackage{amsmath,mathtools,amsfonts,bigdelim,booktabs,epsfig,framed, multibib, multirow,pdflscape,url,wrapfig,bm,multicol,lipsum,nameref,siunitx}
 %\RequirePackage{units} % Removido por conflito com siunitx
 %\geometry{showframe} % display margins for debugging page layout
@@ -29,7 +29,6 @@
 \RequirePackage{fancyvrb} % extended verbatim environments
   \fvset{fontsize=\normalsize}% default font size for fancy-verbatim environments
 
-\RequirePackage{tikz}
 \RequirePackage{pgfplots}
 \pgfplotsset{
     compat=newest,
@@ -38,6 +37,10 @@
 %\usetikzlibrary{positioning}
 %\usepgfplotslibrary{fillbetween}
 %\usepgfplotslibrary{statistics}
+
+% Tables
+\RequirePackage{tabularx}
+\newcolumntype{C}{>{\centering\arraybackslash}X}
 
 % Standardize command font styles and environments
 \newcommand{\doccmd}[1]{\texttt{\textbackslash#1}}% command name -- adds backslash automatically
@@ -56,6 +59,8 @@
 \definecolor{customgreen}{HTML}{196b24}
 \definecolor{customblue}{HTML}{156082}
 \definecolor{customorange}{HTML}{e97132}
+\definecolor{customcinza}{HTML}{a5a5a5}
+\definecolor{customyellow}{HTML}{ffc000}
 \definecolor{White}{gray}{0.9}
 \definecolor{Black}{gray}{0.0}
 \definecolor{LightButter}{rgb}{0.98,0.91,0.31}
@@ -235,12 +240,3 @@
 
 \newcommand\myworries[1]{\textcolor{red}{#1}}
 %\renewcommand\myworries[1]{} % uncomment to remove all myworries notes
-
-\newcommand{\graus}{$^{\circ}$C}
-
-\newcommand{\TSP}{tiossulfato de sódio pentahidratado}
-\newcommand{\tsp}{\ce{Na2S2O3.5H2O}}
-\newcommand{\SCP}{sulfato de cobre pentahidratado}
-\newcommand{\scp}{\ce{CuSO4.5H2O}}
-\newcommand{\AMO}{amónia a 25~\%}
-\newcommand{\amo}{\ce{NH3}}

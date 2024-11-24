@@ -85,7 +85,7 @@ A massa de cada saco está apresentada na Tabela~\ref{tab:massa_sacos}.
 
 \begin{table}[!htbp]
     \centering
-    \begin{tabular}{@{}lc@{}}
+    \begin{tabularx}{\textwidth}{@{}lC@{}}
         \toprule
         \textbf{Amostra} & \textbf{Massa (g)} \\ \midrule
         \textcolor{customblue}{A$_{01}$} & \textcolor{customblue}{1020,66} \\
@@ -97,7 +97,7 @@ A massa de cada saco está apresentada na Tabela~\ref{tab:massa_sacos}.
         A$_{07}$ & 1138,15 \\
         \textcolor{customgreen}{A$_{08}$} & \textcolor{customgreen}{1044,50} \\ \midrule
         \textbf{Total} & 7590,38 \\ \bottomrule
-    \end{tabular}
+    \end{tabularx}
     \caption{Massa dos amostras separadas com o \emph{Jones}.}
     \label{tab:massa_sacos}
 \end{table}
@@ -138,22 +138,20 @@ Após cada crivagem, a massa das frações de material retido em cada um dos cri
 
 \begin{table}[!htb]
     \centering
-    \begin{tabular}{@{}lccc@{}}
+    \begin{tabularx}{\textwidth}{@{}lCCC@{}}
         \toprule
         \multirow{2}{*}{\textbf{Malha (mm)}} & \multicolumn{3}{c}{\textbf{Massa (g)}} \\ \cmidrule(lr){2-4}
-         & \multicolumn{1}{c}{\textbf{A$\bm{_{01}}$}} & \multicolumn{1}{c}{\textbf{A$\bm{_{04}}$}} & \textbf{A$\bm{_{08}}$} \\ \hline
-        \textbf{0,850} & \multicolumn{1}{c}{4,72} & \multicolumn{1}{c}{4,82} & 4,69 \\
-        \textbf{0,600} & \multicolumn{1}{c}{4,26} & \multicolumn{1}{c}{4,48} & 4,43 \\
-        \textbf{0,425} & \multicolumn{1}{c}{7,06} & \multicolumn{1}{c}{8,15} & 9,65 \\
-        \textbf{0,300} & \multicolumn{1}{c}{30,65} & \multicolumn{1}{c}{31,53} & 41,93 \\
-        \textbf{Infra} & \multicolumn{1}{c}{973,37} & \multicolumn{1}{c}{1002,44} & 982,95 \\ \midrule
-        \textbf{\bm{$\sum$}}& \multicolumn{1}{c}{\textbf{1020,06}} & \multicolumn{1}{c}{\textbf{1051,42}} & \textbf{1043,65} \\ \bottomrule
-    \end{tabular}
+         & \multicolumn{1}{C}{\textbf{A$\bm{_{01}}$}} & \multicolumn{1}{C}{\textbf{A$\bm{_{04}}$}} & \textbf{A$\bm{_{08}}$} \\ \hline
+        \textbf{0,850} & \multicolumn{1}{C}{4,72} & \multicolumn{1}{C}{4,82} & 4,69 \\
+        \textbf{0,600} & \multicolumn{1}{C}{4,26} & \multicolumn{1}{C}{4,48} & 4,43 \\
+        \textbf{0,425} & \multicolumn{1}{C}{7,06} & \multicolumn{1}{C}{8,15} & 9,65 \\
+        \textbf{0,300} & \multicolumn{1}{C}{30,65} & \multicolumn{1}{C}{31,53} & 41,93 \\
+        \textbf{Infra} & \multicolumn{1}{C}{973,37} & \multicolumn{1}{C}{1002,44} & 982,95 \\ \midrule
+        \textbf{\bm{$\sum$}}& \multicolumn{1}{C}{\textbf{1020,06}} & \multicolumn{1}{C}{\textbf{1051,42}} & \textbf{1043,65} \\ \bottomrule
+    \end{tabularx}
     \caption{Massa de material retido em cada crivo após a crivagem.}
     \label{tab:massa_retido_crivagem}
 \end{table}
-
-\newpara
 
 Foi efetuada uma análise granulométrica do material retido em cada crivo.
 A curva granulométrica está apresentada na Figura~\ref{fig:curva_granulometrica}.
@@ -233,7 +231,7 @@ As massas de cada uma das sub-amostras está apresentada na tabela seguinte:
 
 \begin{table*}[ht]
 \centering
-    \begin{tabular}{@{}lcccccccc@{}}
+    \begin{tabularx}{\textwidth}{@{}lCCCCCCCC@{}}
         \toprule
         \textbf{Sub-amostras (g)} & \textbf{A\bm{$_{01}$}} & \textbf{A\bm{$_{02}$}} & \textbf{A\bm{$_{03}$}} & \textbf{A\bm{$_{04}$}} & \textbf{A\bm{$_{05}$}} & \textbf{A\bm{$_{06}$}} & \textbf{A\bm{$_{07}$}} & \textbf{A\bm{$_{08}$}} \\ \hline
         \textbf{A\bm{$_{0\text{n.}1}$}} & 254,44 & 207,90 & 200,00 & 262,99 & 243,20 & 196,06 & 283,14 & 264,14 \\
@@ -241,7 +239,7 @@ As massas de cada uma das sub-amostras está apresentada na tabela seguinte:
         \textbf{A\bm{$_{0\text{n.}3}$}} & 254,76 & 210,29 & 200,52 & 262,23 & 250,16 & 198,40 & 284,01 & 257,18 \\
         \textbf{A\bm{$_{0\text{n.}4}$}} & 254,22 & 209,50 & 198,21 & 262,28 & 246,06 & 198,43 & 282,14 & 259,72 \\ \midrule
         \textbf{\bm{$\sum$}} & 1017,09 & 836,45 & 800,91 & 1049,80 & 985,18 & 785,73 & 1135,79 & 1041,09 \\ \bottomrule
-    \end{tabular}
+    \end{tabularx}
 \end{table*}
 
 \newpara
@@ -268,7 +266,7 @@ Os dados irão ser posteriormente analisados.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newday{6 Novembro 2024}
+\newday{6 Novembro 2024}\label{day:6-novembro-2024}
 
 Hoje foram refeitas as análises FRX para as amostras \texttt{A01.1}, \texttt{A03.2}, \texttt{A05.3} e \texttt{A08.3}.
 Os valores destas análises serão adicionados (substituídos) aos dados obtidos no dia~\nameref{day:31-outubro-2024}.
@@ -277,6 +275,44 @@ A necessidade de refazer as análises para estas amostras assenta no facto de o 
 Portanto, é necessário refazer a análise FRX para estas amostras para que a média, que vai ser calculada, seja correta e que os resultados sejam representativos.
 
 \hrulefill
+
+\subsection*{Análise dos resultados do FRX}
+
+Das análises realizadas, tanto a primeira, do dia~\nameref{day:31-outubro-2024}, como a segunda, do dia~\nameref{day:6-novembro-2024}, foram obtidos ficheiros \texttt{.csv} que continham informação relativa à quantidade (em \%) de elementos presentes em cada uma das amostras.
+
+Uma análise foi realizada aos valores obtidos a partir desses ficheiros.
+Para cada tiro e para cada elemento, identificaram-se e excluíram-se os valores considerados \emph{outliers}\sidenote{Por exemplo, em alguns tiros, certos elementos tinham quatro valores a rondar os 2~\% e um valor a rondar os 0,002~\%. Nesses casos, o outlier seria o 0,002~\%, que não se comporta como os restantes valores para a mesma amostra.}, ou seja, aqueles que apresentavam um desvio significativo em relação aos restantes.
+Essa exclusão permitiu que a média calculada fosse mais representativa das características de cada amostra.
+
+Como resultado dessa análise, foi elaborada a Tabela~\ref{tab:frx-elementos-mais-presentes}, que apresenta os valores médios das quantidades dos elementos (em \%), organizados em ordem decrescente para cada uma das amostras.
+Apenas os elementos com maior presença foram incluídos:
+
+\begin{table}[!ht]
+    \caption{FRX - Elementos mais presentes nas amostras.}
+    \label{tab:frx-elementos-mais-presentes}
+    \begin{tabularx}{\textwidth}{@{}lCCCCCCCC@{}}
+        \toprule
+        \textbf{(\%)} & \textbf{A01.1} & \textbf{A02.3} & \textbf{A03.2} & \textbf{A04.3} & \textbf{A05.3} & \textbf{A06.4} & \textbf{A07.4} & \textbf{A08.3} \\ \midrule
+        \textbf{Fe} & 4,582 & 4,977 & 4,480 & 4,871 & 4,608 & 4,268 & 4,665 & 4,341 \\
+        \textbf{As} & 1,916 & 2,052 & 1,844 & 2,048 & 1,908 & 1,718 & 1,947 & 1,777 \\
+        \textbf{K} & 1,531 & 1,721 & 1,331 & 1,629 & 1,416 & 1,504 & 1,947 & 1,833 \\
+        \textbf{Ti} & 0,211 & 0,263 & 0,226 & 0,247 & 0,251 & 0,225 & 0,270 & 0,232 \\ \bottomrule
+    \end{tabularx}
+\end{table}
+
+\newpara
+
+Com esta tabela, de forma a ser possível visualizar os dados obtidos graficamente, construíu-se um gráfico de barras com os elementos mais presentes, \ce{Fe}, \ce{As}, \ce{K} e \ce{Ti}, apresentada na Figura~\ref{fig:frx-elementos-mais-presentes}.
+
+Os restantes elementos não serão aqui apresentados pois estão presentes numa quantidade muito pequena.
+Os dados referentes aos restantes elementos podem ser consultados na pasta partilhada do projeto.
+
+\newpage
+
+\input{figures/frx_bar2d}
+
+\hrulefill
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newday{7 Novembro 2024}\label{day:7-novembro-2024}
@@ -310,10 +346,11 @@ No dia seguinte, com a amostra já arrefecida, será realizada a digestão ácid
 
 Retiraram-se as amostras que foram colocadas na mufla no dia~\nameref{day:7-novembro-2024}.
 O material, anteriormente com uma cor beje (como se pode ver na Figura~\ref{fig:amostra_no_moinho}), encontra-se agora com uma cor avermelhada - Figura~\ref{fig:amostra-apos-mufla}.
-\begin{marginfigure}[-3\baselineskip]
+
+\begin{marginfigure}[0.25cm]
     \centering
     \includegraphics[width=0.9\linewidth]{figures/Amostra após mufla}
-    \caption{Amostra após mufla a 700\graus.}
+    \caption{Amostra após a mufla.}
     \label{fig:amostra-apos-mufla}
 \end{marginfigure}
 
@@ -324,10 +361,11 @@ A relação vai ser de 1:3, ou seja, 6~ml de \ce{HNO_3} para 18~ml de \ce{HCl}, 
 A quantidade específicada de cada ácido é colocada em cada um dos 5~copos da Figura~\ref{fig:amostra-a-ser-atacada}, deixando a reação decorrer durante 1~hora e 30~minutos.
 Serão feitos 3~ataques, ou seja, após cada hora e meia será colocado de novo ácido nítrico e ácido clorídrico.
 Repete-se esta operação três vezes, totalizando em 4~horas e 30~minutos de reação.
-\begin{marginfigure}[\baselineskip]
+
+\begin{marginfigure}[2\baselineskip]
     \centering
     \includegraphics[width=0.9\linewidth]{figures/Amostra a ser atacada - digestão ácida}
-    \caption{Amostra a ser atacada com ácido.}
+    \caption{Amostra a ser atacada com \emph{aqua regia}.}
     \label{fig:amostra-a-ser-atacada}
 \end{marginfigure}
 
@@ -340,7 +378,7 @@ O resíduo foi colocado numa placa de Petri.
 Colocou-se um pouco de água destilada no copo para facilitar a transferência do resíduo para a placa.
 Fez-se isto para cada um dos 5~copos, resultando nas amostras apresentadas na Figura~\ref{fig:amostra-apos-digestao}.
 
-\begin{marginfigure}[-3\baselineskip]
+\begin{marginfigure}[-1\baselineskip]
     \centering
     \includegraphics[width=0.8\linewidth]{figures/Amostra após Digestão}
     \caption{Amostra após a digestão.}
@@ -364,10 +402,10 @@ Foram colocadas as amostras da Figura~\ref{fig:amostra-apos-digestao}, cuidadosa
 
 Foram realizadas duas filtrações para cada amostra.
 
-O resíduo sólido foi separado para uma placa de Petri.
-As amostras líquidas foram armazenadas para se realizar a absorção atómica e os resíduos foram embrulhados em Parafilm.
+O resíduo sólido foi colocado numa placa de Petri e embrulhado em Parafilm.
+A \emph{aqua regia} foi armazenada para análise posterior.
 
-\hrulefill
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newthought{Fora do Laboratório} decidiu-se fazer um estudo prévio dos conceitos teóricos relativos à absorção atómica, para que, na altura de efetuar a análise, os conhecimentos básicos estejam consolidados e que se perceba o funcionamento do equipamento.
 
@@ -444,7 +482,7 @@ Dessa forma, obteve-se a Tabela~\ref{tab:aas-concentracao-au-fase-liquida} refer
 
 \begin{table}[!ht]
     \centering
-    \begin{tabular}{@{}lcc@{}}
+    \begin{tabularx}{\textwidth}{@{}lCC@{}}
         \toprule
         \textbf{Amostra} & \textbf{Absorção} & \textbf{Conc. (mg/L)} \\ \midrule
         \textbf{Dig. 1} & 0,08427 & 2,23 \\
@@ -452,7 +490,7 @@ Dessa forma, obteve-se a Tabela~\ref{tab:aas-concentracao-au-fase-liquida} refer
         \textbf{Dig. 3} & 0,07377 & 1,94 \\
         \textbf{Dig. 4} & 0,06751 & 1,77 \\
         \textbf{Dig. 5} & 0,08440 & 2,23 \\ \bottomrule
-    \end{tabular}
+    \end{tabularx}
     \caption{Concentração em \ce{Au} na fase líquida.}
     \label{tab:aas-concentracao-au-fase-liquida}
 \end{table}
